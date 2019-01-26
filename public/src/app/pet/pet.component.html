@@ -1,0 +1,67 @@
+<div class="container">
+  <div *ngIf="pet">
+    <div class="card">
+      <div class="card-header display-2">Details about {{pet.name}}</div>
+      <div class="card-body">
+        <div class="d-flex flex-row-reverse">
+          <button class="btn btn-success" (click)="home()">Home</button>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <h4 class="display-5">Pet Type:</h4>
+          </div>
+          <div class="col-6">
+            <p class="text-left">{{pet.petType}}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <h4 class="display-5">Description:</h4>
+          </div>
+          <div class="col-6">
+            <p class="text-left">{{pet.desc}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <h4 class="display-5">Skills:</h4>
+          </div>
+          <div class="col-6">
+            <div *ngIf="pet.skill[0].skill1">
+              <div class="row">
+                <p class="text-left ml-3">
+                  {{pet.skill[0].skill1}}</p>
+              </div>
+            </div>
+            <div *ngIf="pet.skill[0].skill2">
+              <div class="row">
+                <p class="text-left ml-3">{{pet.skill[0].skill2}}</p>
+              </div>
+            </div>
+            <div *ngIf="pet.skill[0].skill3">
+              <div class="row">
+                <p class="text-left ml-3">{{pet.skill[0].skill3}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <h4 class="display-5">Likes:</h4>
+          </div>
+          <div class="col-6">
+            <p>{{pet.likes}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div *ngIf="count == 0">
+            <button class="btn btn-primary mt-2 ml-3" (click)="like(pet._id)">Like this pet</button>
+          </div>
+          <button class="btn btn-success mt-2 ml-5" (click)="adopt(pet._id)">Adopt this pet!</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
